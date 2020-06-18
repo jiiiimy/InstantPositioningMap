@@ -4,7 +4,7 @@ class SideArea extends Component {
 	render() {
 		return (
 			<div className="sideArea">
-				<h1>InstantTable</h1>
+				<h1>Instant P-Map</h1>
 				<div className="area _intro">
 					<p>α版：使い方</p>
 					<ol>
