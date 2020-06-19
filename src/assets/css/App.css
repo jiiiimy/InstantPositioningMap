@@ -1,0 +1,257 @@
+/* --------- 
+初期化
+-------- */
+html,
+body,
+h1,h2,h3,h4,p,ol{
+	margin: 0;
+	font-family: 'Noto Sans JP', sans-serif;
+}
+ol{
+	padding-inline-start: 20px;
+}
+button,
+small{
+	color: #fff;
+	text-decoration: none;
+}
+button{
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	outline: none;
+	padding: 0;
+	appearance: none;
+}
+input{
+	 padding: 0;
+	 border: none;
+	 border-radius: 0;
+	 outline: none;
+	 background: none;
+}
+textarea{
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	resize: none;
+	padding: 0;
+	border: 0;
+	outline: none;
+	background: transparent;
+}
+
+/* --------- 
+トップ
+-------- */
+
+.container._all {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+}
+.sideArea{
+	width: 250px;
+	height: 100%;
+	background: #909090;
+	position: relative;
+}
+.sideArea h1,
+.sideArea p,
+.sideArea ol{
+	color: #fdfdfd;
+}
+.sideArea h1{
+	text-align: center;
+}
+.area._intro{
+	margin: 15px 0 0;
+	padding: 5px;
+}
+.area._intro li{
+	margin: 10px 0;
+	font-size: 14px;
+}
+.area._intro li a{
+	color: blue;
+}
+.area._contact{
+	width: 100%;
+	position: absolute;
+	bottom: 20px;
+}
+.area._contact ._textarea{
+	width: calc(100% - 20px);
+	height: 180px;
+	margin: 0 auto;
+	padding: 10px;
+	box-sizing: border-box;
+	background: #f8f8f8;
+	display: block;
+}
+.area._contact ._submit{
+	margin: 10px 10px 0 auto;
+	padding: 5px 20px;
+	background-color: blue;
+	border-radius: 4px;
+	box-shadow: 0 3px 5px rgba(0,0,0,0.3);
+	display: block;
+}
+.mainArea{
+	width: calc(100% - 250px);
+	height: 100%;
+}
+
+.container._p-map{
+	width: 100%;
+	height: 100%;
+	background: #f8f8f8;
+}
+.container._p-map .contents{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.container._p-map .wrap{
+	width: 850px;
+  height: 500px;
+}
+.box._button{
+  display: flex;
+  justify-content: space-evenly;
+}
+.box._button ._frame{
+	width: 110px;
+}
+.box._button button{
+	width: 100%;
+	margin: 0 0 10px;
+	padding: 5px 0;
+	background-color: #909090;
+	border-radius: 4px;
+	box-shadow: 0 3px 5px rgba(0,0,0,0.3);
+}
+.box._map{
+  padding: 15px;
+	box-sizing: border-box;
+	background: #f8f8f8;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.5);
+}
+.area._map{
+  width: 100%;
+  height: 410px;
+  display: flex;
+  justify-content: space-between;
+}
+.area._p-map{
+  width: calc(100% - 200px);
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.area._maplabel._tb{
+  width: 100%;
+  height: 20px;
+  padding: 5px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.area._maplabel._tb ._input {
+  text-align: center;
+}
+.area._maplabel._rl{
+  width: 100px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.area._maplabel._rl ._input{
+  width: 100%;
+  text-align: center;
+}
+.quadrants {
+  width: 50%;
+  height: 50%;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+}
+.quadrants._first{
+  border-right: 1px solid #909090;
+  border-bottom: 1px solid #909090;
+}
+.quadrants._second{
+  border-left: 1px solid #909090;
+  border-bottom: 1px solid #909090;
+}
+.quadrants._third{
+  border-top: 1px solid #909090;
+  border-right: 1px solid #909090;
+}
+.quadrants._fourth{
+  border-top: 1px solid #909090;
+  border-left: 1px solid #909090;
+}
+.quadrants ._data{
+	border: 0.01px dashed #ececec;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+}
+.quadrants ._data._1{
+  width: calc(100% / 1);
+  height: calc(100% / 1);
+}
+.quadrants ._data._2{
+  width: calc(100% / 2);
+  height: calc(100% / 1);
+}
+.quadrants ._data._4{
+  width: calc(100% / 2);
+  height: calc(100% / 2);
+}
+.quadrants ._data._8{
+  width: calc(100% / 4);
+  height: calc(100% / 2);
+}
+.quadrants ._data._16{
+  width: calc(100% / 4);
+  height: calc(100% / 4);
+}
+.quadrants ._data ._input{
+  width: 100%;
+  text-align: center;
+}
+
+.block{
+	display: block;
+}
+.none{
+	display: none;
+}
+
+@media screen and  (max-width:1100px) {
+	.container._all {
+		height: auto;
+		display: block;
+	}
+	.sideArea {
+		width: 100%;;
+	}
+	.area._contact {
+		position: static;
+		padding: 0 0 10px 0;
+	}
+	.mainArea{
+		width: 100%;
+		margin: 30px 0 0 0;
+		overflow-x: scroll;
+	}
+	.container._p-map{
+		width: 850px;
+	}
+}

@@ -1,48 +1,60 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { subdivision, broadening } from '../actions'
 
 class MainArea extends Component {
 	render() {
+		const props = this.props
+		let cell = [];
+		for (let i = 0; i < props.devision; i++) {
+			cell.push(
+				<div className={props.dataStyle} key={i}>
+					<input className="_input" type="text" />
+				</div>)
+		}
 		return (
 			<div className="mainArea">
-				<div className="container _table">
+				<div className="container _p-map">
 					<div className="contents">
-						<div className="table _column">
-							<div className="table _c_delete">
-								<div className="r_delete">
+						<div className="wrap">
+							<div className="box _button">
+								<div className="_frame">
+									<button className={props.btnSubStyle} onClick={props.subdivision}>セルを細かく</button>
 								</div>
-								<div className="c_delete">
-								</div>
-								<div className="c_delete" v-for="(ch, index) in columnHead">
-									<span className="_btn gtm-delete-column"><span className="_minus gtm-delete-column"></span></span>
-								</div>
-								<div className="c_add" v-if="columnHead.length < 5">
-									<span className="_btn gtm-add-column"><span className="_plus gtm-add-column">+</span></span>
+								<div className="_frame">
+									<button className={props.btnBrdStyle} onClick={props.broadening}>セルを大きく</button>
 								</div>
 							</div>
-							<div className="table _head">
-								<div className="r_delete">
-									<span className="_btn"><span className="_minus"></span></span>
+							<div className="box _map">
+								<div className="area _maplabel _tb">
+									<input className="_input" type="text" placeholder="ラベルを入力"/>
 								</div>
-								<div className="cell _dead">
-									<p>powerd by InstantTable</p>
+								<div className="area _map">
+									<div className="area _maplabel _rl">
+										<input className="_input" type="text" placeholder="ラベルを入力" />
+									</div>
+									<div className="area _p-map">
+										<div className="quadrants _first">
+											{cell}
+										</div>
+										<div className="quadrants _second">
+											{cell}
+										</div>
+										<div className="quadrants _third">
+											{cell}
+										</div>
+										<div className="quadrants _fourth">
+											{cell}
+										</div>
+									</div>
+									<div className="area _maplabel _rl">
+										<input className="_input" type="text" placeholder="ラベルを入力" />
+									</div>
 								</div>
-								<div className="cell _c_head" v-for="(ch, index) in  columnHead">
-									<input className="_textarea" v-model="ch.text" />
+								<div className="area _maplabel _tb">
+									<input className="_input" type="text" placeholder="ラベルを入力" />
 								</div>
 							</div>
-						</div>
-						<div className="table _row" v-for="(r, index) in row">
-							<div className="r_delete">
-								<span className="_btn gtm-delete-row"><span className="_minus gtm-delete-row"></span></span>
-							</div>
-							<div className="table _r_head" v-for="(rd, index) in r">
-								<div className="cell">
-									<input className="_textarea" v-model="rd.text" />
-								</div>
-							</div>
-						</div>
-						<div className="r_add" v-if="row.length < 7">
-							<span className="_btn gtm-add-row"><span className="_plus gtm-add-row">+</span></span>
 						</div>
 					</div>
 				</div>
@@ -51,4 +63,15 @@ class MainArea extends Component {
 	}
 }
 
-export default MainArea;
+const mapStateToProps = state => ({
+	devision: state.devision.value,
+	dataStyle: state.devision.dataStyle,
+	btnSubStyle: state.devision.btnSubStyle,
+	btnBrdStyle: state.devision.btnBrdStyle
+ })
+const mapDispatchToProps = dispatch => ({
+	subdivision: () => dispatch(subdivision()),
+	broadening: () => dispatch(broadening())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(MainArea);

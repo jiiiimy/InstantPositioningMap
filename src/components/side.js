@@ -4,11 +4,11 @@ class SideArea extends Component {
 	render() {
 		return (
 			<div className="sideArea">
-				<h1>InstantTable</h1>
+				<h1>Instant P-Map</h1>
 				<div className="area _intro">
 					<p>α版：使い方</p>
 					<ol>
-						<li>最大で5行：7列の表を作れます。</li>
+						<li>最大で8×8のセルを持ったポジショニングマップや四象限の図を作れます。</li>
 						<li>全てのセルに値を入力できます。</li>
 						<li>保存はできません。<br />作成中に"リロード"や"戻る"をしないよう気をつけてください。</li>
 						<li>完成したらスクショしてブログや資料に使ってください。</li>
