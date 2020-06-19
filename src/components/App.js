@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import '../assets/App.css';
+import React, { Component } from 'react';
+import '../assets/css/App.css';
 import SideArea from './side';
 import MainArea from './main';
 

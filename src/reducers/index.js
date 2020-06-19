@@ -1,4 +1,4 @@
 import {combineReducers} from 'redux'
-import markoff from './markoff'
+import devision from './devision'
 
-export default combineReducers({markoff})
+export default combineReducers({devision})

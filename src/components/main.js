@@ -1,18 +1,15 @@
-import React, {Component} from 'react';
-
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { subdivision, broadening } from '../actions'
 
 class MainArea extends Component {
-	render() {const list = [];
-		const data = [
-			{ name: 'hoge' },
-			{ name: 'nani' },
-			{ name: 'nani' },
-			{ name: 'nani' }
-		]
-		for (let i = 0; i < data.length; i++) {
-			list.push(
-				<div className="_data" key={i}>
-					<input className="_input" type="text" placeholder="hoge" />
+	render() {
+		const props = this.props
+		let cell = [];
+		for (let i = 0; i < props.devision; i++) {
+			cell.push(
+				<div className={props.dataStyle} key={i}>
+					<input className="_input" type="text" />
 				</div>)
 		}
 		return (
@@ -21,43 +18,41 @@ class MainArea extends Component {
 					<div className="contents">
 						<div className="wrap">
 							<div className="box _button">
-								<button id="devideLarge">セルを大きく</button>
-								<button id="devideSmall">セルを細かく</button>
+								<div className="_frame">
+									<button className={props.btnSubStyle} onClick={props.subdivision}>セルを細かく</button>
+								</div>
+								<div className="_frame">
+									<button className={props.btnBrdStyle} onClick={props.broadening}>セルを大きく</button>
+								</div>
 							</div>
 							<div className="box _map">
 								<div className="area _maplabel _tb">
-									<input className="_input" type="text" placeholder="上のラベル"/>
+									<input className="_input" type="text" placeholder="ラベルを入力"/>
 								</div>
 								<div className="area _map">
 									<div className="area _maplabel _rl">
-										<input className="_input" type="text" placeholder="左のラベル" />
+										<input className="_input" type="text" placeholder="ラベルを入力" />
 									</div>
 									<div className="area _p-map">
 										<div className="quadrants _first">
-											{/* {list} */}
+											{cell}
 										</div>
 										<div className="quadrants _second">
-											<div className="_data">
-												<input className="_input" type="text" placeholder="値" />
-											</div>
+											{cell}
 										</div>
 										<div className="quadrants _third">
-											<div className="_data">
-												<input className="_input" type="text" placeholder="値" />
-											</div>
+											{cell}
 										</div>
 										<div className="quadrants _fourth">
-											<div className="_data">
-												<input className="_input" type="text" placeholder="値" />
-											</div>
+											{cell}
 										</div>
 									</div>
 									<div className="area _maplabel _rl">
-										<input className="_input" type="text" placeholder="右のラベル" />
+										<input className="_input" type="text" placeholder="ラベルを入力" />
 									</div>
 								</div>
 								<div className="area _maplabel _tb">
-									<input className="_input" type="text" placeholder="下のラベル" />
+									<input className="_input" type="text" placeholder="ラベルを入力" />
 								</div>
 							</div>
 						</div>
@@ -68,4 +63,15 @@ class MainArea extends Component {
 	}
 }
 
-export default MainArea;
+const mapStateToProps = state => ({
+	devision: state.devision.value,
+	dataStyle: state.devision.dataStyle,
+	btnSubStyle: state.devision.btnSubStyle,
+	btnBrdStyle: state.devision.btnBrdStyle
+ })
+const mapDispatchToProps = dispatch => ({
+	subdivision: () => dispatch(subdivision()),
+	broadening: () => dispatch(broadening())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(MainArea);
