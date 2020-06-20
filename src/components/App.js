@@ -24,7 +24,7 @@ class App extends Component {
           <meta name="twitter:player" content="@jiiiimy00" />
           <link rel="shortcut icon" href="./favicon.ico" />
           <link rel="apple-touch-icon" href="./apple-icon.png" />
-          <link rel="icon" type="image/png" href="./android-icon-256x256.png" />
+          <link rel="icon" type="image/png" href="./android-chrome-256x256.png" />
           <title>InstantQuadrant</title>
           <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,700&display=swap" rel="stylesheet" />
         </Helmet>
