@@ -4,7 +4,7 @@ class SideArea extends Component {
 	render() {
 		return (
 			<div className="sideArea">
-				<h1>Instant P-Map</h1>
+				<h1>InstantQuadrant</h1>
 				<div className="area _intro">
 					<p>α版：使い方</p>
 					<ol>
@@ -12,7 +12,7 @@ class SideArea extends Component {
 						<li>全てのセルに値を入力できます。</li>
 						<li>保存はできません。<br />作成中に"リロード"や"戻る"をしないよう気をつけてください。</li>
 						<li>完成したらスクショしてブログや資料に使ってください。</li>
-						<li>ソースコードは<a className="gtm-link github" href="https://github.com/jiiiimy/InstantTable">Github</a>に公開しています。</li>
+						<li>ソースコードは<a className="gtm-link github" href="https://github.com/jiiiimy/InstantPositioningMap">Github</a>に公開しています。</li>
 						<li>感想や要望など、ぜひ下記フォームからお送りください。</li>
 					</ol>
 				</div>
