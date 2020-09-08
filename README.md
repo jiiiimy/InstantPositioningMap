@@ -1,8 +1,7 @@
 # これはなに？
 
-マトリックスを簡単に作れるSPA
-まだ作成だけで保存はできないので、作成したらスクショしてブログやSNSに使ってください。
-[InstantTable](https://instanttable.netlify.app/)
+マトリックスを簡単に作れるSPA [InstantTable](https://instanttable.netlify.app/)のリポジトリ。
+まだ作成だけで保存はできないので、作成したらスクショしてブログやSNSに使う。
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
